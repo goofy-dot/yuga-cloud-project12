@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Yuga Cloud Control</title>
+</head>
+<body>
+  <h1>Yuga Cloud LED Control</h1>
+  <button onclick="sendCommand('LED_ON')">LED ON</button>
+  <button onclick="sendCommand('LED_OFF')">LED OFF</button>
+
+  <script>
+    async function sendCommand(cmd) {
+      await fetch('/command', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ command: cmd })
+      });
+      console.log('Sent command:', cmd);
+    }
+  </script>
+</body>
+</html>
