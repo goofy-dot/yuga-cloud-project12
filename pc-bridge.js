@@ -1,7 +1,7 @@
 const axios = require('axios');
 const { SerialPort } = require('serialport');
 
-const CLOUD_URL = 'https://yuga-cloud-project12.onrender.com/'; // change after deploy
+const CLOUD_URL = 'https://yuga-cloud-project12.onrender.com'; // change after deploy
 const ARDUINO_PORT = 'COM3';
 
 const port = new SerialPort({
